@@ -6,6 +6,7 @@ defmodule SFDCQuery.View.Printer do
 
   @spec print(Query.t(), String.t() | {atom(), String.t()}) :: :ok
   def print({_key, value}, query), do: print(value, query)
+
   def print(value, query) do
     break()
     IO.puts(query.soql)
