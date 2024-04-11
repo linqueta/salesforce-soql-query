@@ -1,4 +1,4 @@
-# SalesforceSoqlQuery
+# SFDCQuery
 
 **TODO: Add description**
 

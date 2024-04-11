@@ -1,9 +1,9 @@
-defmodule SalesforceSoqlQuery.MixProject do
+defmodule SFDCQuery.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :salesforce_soql_query,
+      app: :sfdc_query,
       version: "0.1.0",
       elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,
