@@ -14,34 +14,10 @@ defmodule SFDCQuery.RestAPITest do
 
     test "returns the records when successful", args do
       records = [
-        %{
-          "Id" => "001U8000005CeutIAC",
-          "attributes" => %{
-            "type" => "Account",
-            "url" => "/services/data/v60.0/sobjects/Account/001U8000005CeutIAC"
-          }
-        },
-        %{
-          "Id" => "001U8000005cJN0IAM",
-          "attributes" => %{
-            "type" => "Account",
-            "url" => "/services/data/v60.0/sobjects/Account/001U8000005cJN0IAM"
-          }
-        },
-        %{
-          "Id" => "001U8000005cRAnIAM",
-          "attributes" => %{
-            "type" => "Account",
-            "url" => "/services/data/v60.0/sobjects/Account/001U8000005cRAnIAM"
-          }
-        },
-        %{
-          "Id" => "001U8000005oz2rIAA",
-          "attributes" => %{
-            "type" => "Account",
-            "url" => "/services/data/v60.0/sobjects/Account/001U8000005oz2rIAA"
-          }
-        }
+        %{"Id" => "001U8000005CeutIAC"},
+        %{"Id" => "001U8000005cJN0IAM"},
+        %{"Id" => "001U8000005cRAnIAM"},
+        %{"Id" => "001U8000005oz2rIAA"}
       ]
 
       Mimic.expect(Req, :request, fn method: :get,

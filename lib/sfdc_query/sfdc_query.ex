@@ -6,7 +6,7 @@ defmodule SFDCQuery do
   alias SFDCQuery.Config
   alias SFDCQuery.RestAPI
 
-   @doc """
+  @doc """
   Queries SFDC having a SFDCQuery.Config and a SOQL query returning the records
   """
   @spec query(Config.t(), String.t()) :: {:ok, list(map())} | {:error, any()}
