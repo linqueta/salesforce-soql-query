@@ -3,28 +3,31 @@ defmodule SFDCQuery.Config do
   The configuration of the SFDCQuery library.
   """
 
-  defstruct [:instance_url, :access_token, :refresh_token, :version, :logs]
+  alias SFDCQuery.Config
+
+  defstruct [:instance_url, :access_token, :version, :logs]
 
   @type t :: %__MODULE__{
-          instance_url: String.t() | nil,
-          access_token: String.t() | nil,
-          refresh_token: String.t() | nil,
+          instance_url: String.t(),
+          access_token: String.t(),
           version: String.t(),
-          logs: boolean() | nil
+          logs: boolean()
         }
 
   @spec new(%{
           required(:instance_url) => String.t(),
           required(:access_token) => String.t(),
-          optional(:refresh_token) => String.t(),
           required(:version) => String.t() | integer(),
           optional(:logs) => boolean()
-        }) :: SFDCQuery.Config.t()
-  def new(%{instance_url: instance_url, access_token: access_token, version: version} = args \\ %{}) do
-    %SFDCQuery.Config{
+        }) :: t()
+  def new(%{instance_url: nil}), do: raise(ArgumentError, "instance_url is required")
+  def new(%{access_token: nil}), do: raise(ArgumentError, "access_token is required")
+  def new(%{version: nil}), do: raise(ArgumentError, "version is required")
+
+  def new(%{instance_url: instance_url, access_token: access_token, version: version} = args) do
+    %Config{
       instance_url: instance_url,
       access_token: access_token,
-      refresh_token: args[:refresh_token],
       version: parse_version(version),
       logs: parse_boolean(args[:logs])
     }
@@ -36,5 +39,4 @@ defmodule SFDCQuery.Config do
 
   defp parse_version(version) when is_integer(version), do: "#{version}.0"
   defp parse_version(version) when is_binary(version), do: version
-  defp parse_version(nil), do: nil
 end

@@ -17,7 +17,6 @@ defmodule SFDCQuery.Client.Default do
     Config.new(%{
       instance_url: args[:instance_url] || fetch_env("SFDC_QUERY_INSTANCE_URL"),
       access_token: args[:access_token] || fetch_env("SFDC_QUERY_ACCESS_TOKEN"),
-      refresh_token: args[:refresh_token] || fetch_env("SFDC_QUERY_REFRESH_TOKEN"),
       version: args[:version] || fetch_env("SFDC_QUERY_VERSION"),
       logs: args[:logs] || fetch_env("SFDC_QUERY_LOGS_ENABLED")
     })
