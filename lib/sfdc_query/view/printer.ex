@@ -4,7 +4,7 @@ defmodule SFDCQuery.View.Printer do
   @spec line(integer()) :: :ok
   def line(size \\ 80), do: separator(size) |> IO.puts()
 
-  @spec line(integer()) :: String.t()
+  @spec separator(integer()) :: String.t()
   def separator(size \\ 80), do: String.pad_trailing("", size, "-")
 
   @spec print(any(), Query.t()) :: :ok

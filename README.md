@@ -26,7 +26,13 @@ args = %{
   version: "60.0"
 }
 
+args = %{
+  instance_url: "https://hgdata--qatest.sandbox.my.salesforce.com",
+  access_token: "00D010000008qmj!AQEAQP3CfLmGwlqOC1bm1Mk26xyZiviwytiQkNNUP0SAMPdY7aq6ihRkEDudfv_F5Cm0i4EYCIMqNEi449TIgyebrh3GLble",
+  version: "60.0"
+}
+
 SFDCQuery.Client.Default.create(args)
-|> SFDCQuery.query("SELECT Id, Name, Website, HG_Insights__HG_Match_Status__c From Account LIMIT 10")
+|> SFDCQuery.query("SELECT Id, Name, HG_Insights__HG_Match_Status__c, Website From Account LIMIT 10")
 |> SFDCQuery.View.Table.show()
 ```

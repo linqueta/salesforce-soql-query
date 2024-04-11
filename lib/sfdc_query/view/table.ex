@@ -29,12 +29,12 @@ defmodule SFDCQuery.View.Table do
 
   defp build_row_with_pad(row, indexes_pad) do
     formatted =
-      Enum.with_index(row)
-      |> Enum.map(fn {value, index} ->
+      row
+      |> Enum.with_index()
+      |> Enum.map_join(" | ", fn {value, index} ->
         value
         |> String.pad_trailing(Enum.at(indexes_pad, index))
       end)
-      |> Enum.join(" | ")
 
     "| " <> formatted <> " |"
   end
@@ -44,11 +44,8 @@ defmodule SFDCQuery.View.Table do
     |> Enum.with_index()
     |> Enum.map(fn {_, index} ->
       Enum.reduce(table, 0, fn row, acc ->
-        size =
-          case Enum.at(row, index) do
-            nil -> 0
-            value -> String.length(value)
-          end
+        value = Enum.at(row, index)
+        size = (value && String.length(value)) || 0
 
         max(acc, size)
       end)
