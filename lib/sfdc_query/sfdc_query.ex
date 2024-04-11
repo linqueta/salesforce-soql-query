@@ -4,8 +4,8 @@ defmodule SFDCQuery do
   """
 
   alias SFDCQuery.Config
-  alias SFDCQuery.RestAPI
   alias SFDCQuery.Query
+  alias SFDCQuery.RestAPI
 
   @doc """
   Queries SFDC having a SFDCQuery.Config and a SOQL query returning the records

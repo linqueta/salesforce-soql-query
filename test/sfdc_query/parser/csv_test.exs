@@ -19,7 +19,6 @@ defmodule SFDCQuery.Parser.CSVTest do
       ]
 
       soql = "SELECT Id, Name From Account LIMIT 10"
-      query = Query.new(soql, records)
 
       assert {:ok, "Id,Name\n001U8000005CeutIAC,Amazon\n001U8000005cJN0IAM,Google\n,Microsoft\n001U8000005oz2rIAA,"} =
                CSV.parse({:ok, Query.new(soql, records)})

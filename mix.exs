@@ -23,7 +23,8 @@ defmodule SFDCQuery.MixProject do
     [
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false, override: true},
       {:mimic, "~> 1.7", only: [:dev, :test]},
-      {:req, "~> 0.4.0"}
+      {:req, "~> 0.4.0"},
+      {:jason, "~> 1.2"}
     ]
   end
 end

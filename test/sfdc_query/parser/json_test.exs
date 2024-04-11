@@ -1,13 +1,13 @@
-defmodule SFDCQuery.Parser.MapTest do
+defmodule SFDCQuery.Parser.JSONTest do
   use ExUnit.Case
 
-  alias SFDCQuery.Parser.Map
+  alias SFDCQuery.Parser.JSON
 
   alias SFDCQuery.Query
 
   describe "parser/1" do
     test "when errored" do
-      assert {:error, "error"} = Map.parse({:error, "error"})
+      assert {:error, "error"} = JSON.parse({:error, "error"})
     end
 
     test "when successful" do
@@ -21,12 +21,8 @@ defmodule SFDCQuery.Parser.MapTest do
       soql = "SELECT Id, Name From Account LIMIT 10"
 
       assert {:ok,
-              [
-                %{Id: "001U8000005CeutIAC", Name: "Amazon"},
-                %{Id: "001U8000005cJN0IAM", Name: "Google"},
-                %{Id: "", Name: "Microsoft"},
-                %{Id: "001U8000005oz2rIAA", Name: ""}
-              ]} = Map.parse({:ok, Query.new(soql, records)})
+              "[{\"Id\":\"001U8000005CeutIAC\",\"Name\":\"Amazon\"},{\"Id\":\"001U8000005cJN0IAM\",\"Name\":\"Google\"},{\"Id\":\"\",\"Name\":\"Microsoft\"},{\"Id\":\"001U8000005oz2rIAA\",\"Name\":\"\"}]"} =
+               JSON.parse({:ok, Query.new(soql, records)})
     end
   end
 end
