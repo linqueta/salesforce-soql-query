@@ -38,7 +38,7 @@ defmodule SFDCQuery.RestAPITest do
       assert {:ok, ^records} =
                args
                |> SFDCQuery.Client.Default.create()
-               |> SFDCQuery.query("SELECT Id From Account LIMIT 10")
+               |> RestAPI.query("SELECT Id From Account LIMIT 10")
     end
 
     test "returns error when failed", args do
