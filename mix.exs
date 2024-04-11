@@ -21,7 +21,9 @@ defmodule SFDCQuery.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:credo, "~> 1.7", only: [:dev, :test], runtime: false, override: true}
+      {:credo, "~> 1.7", only: [:dev, :test], runtime: false, override: true},
+      {:mimic, "~> 1.7", only: [:dev, :test]},
+      {:req, "~> 0.4.0"}
     ]
   end
 end
