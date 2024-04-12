@@ -1,13 +1,13 @@
 defmodule SFDCQuery.MixProject do
   use Mix.Project
 
-  @version "0.1.0"
+  @version "0.1.1"
 
   def project do
     [
       version: @version,
       app: :sfdc_query,
-      description: "Query Salesfore data easily formatting and viewing the data as you want!",
+      description: "Query Salesforce data easily formatting and viewing the data as you want!",
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
       deps: deps(),

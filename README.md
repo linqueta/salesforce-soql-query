@@ -14,7 +14,7 @@ end
 
 ## Using
 
-For querying Salesforce using SFDCQuery library, you will need to define a Client and if you want, you can parse or print the query response
+For querying Salesforce using SFDCQuery library, you will need to define a Client and later, you can parse or print the query response
 
 ### Default Client
 
@@ -52,7 +52,7 @@ SFDCQuery.Client.Default.create(%{
 
 ### Building your own Client
 
-SFDCQuery defines the behaviour `SFDCQuery.Client.Behaviour` allowing you to implement your own Client. It allow you to perfom your system's business rules for fetching the credentials of the Salesforce Org
+SFDCQuery defines the behaviour `SFDCQuery.Client.Behaviour` allowing you to implement your own Client. It allows you build the Client config following the requirements of your project
 
 ```elixir
 defmodule MyApp.CustomerSFDCClient do
@@ -187,7 +187,7 @@ SFDCQuery.Client.Default.create(args)
 
 ### Building your own Parser
 
-You can build your parser using the behaviour `SFDCQuery.Parser.Behaviour`
+You can build your own parser using the behaviour `SFDCQuery.Parser.Behaviour`
 
 ```elixir
 defmodule MyApp.SFDCParser do
@@ -279,7 +279,7 @@ Id,Name,Website
 
 ### Building your own View
 
-You can build your parser using the behaviour `SFDCQuery.View.Behaviour`
+You can build your own view using the behaviour `SFDCQuery.View.Behaviour`
 
 ```elixir
 defmodule MyApp.SFDCHTMLView do
