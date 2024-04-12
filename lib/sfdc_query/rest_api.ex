@@ -25,6 +25,6 @@ defmodule SFDCQuery.RestAPI do
   end
 
   defp handle({:ok, %Req.Response{status: 200, body: %{"records" => records}}}), do: {:ok, records}
-  defp handle({:ok, %Req.Response{status: 400, body: body}}), do: {:error, body}
+  defp handle({:ok, %Req.Response{status: _, body: body}}), do: {:error, body}
   defp handle({:error, _} = error), do: error
 end

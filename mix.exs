@@ -5,12 +5,14 @@ defmodule SFDCQuery.MixProject do
 
   def project do
     [
-      app: :sfdc_query,
       version: @version,
+      app: :sfdc_query,
+      description: "Query Salesfore data easily formatting and viewing the data as you want!",
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      docs: docs()
+      docs: docs(),
+      package: package()
     ]
   end
 
@@ -18,6 +20,15 @@ defmodule SFDCQuery.MixProject do
   def application do
     [
       extra_applications: [:logger]
+    ]
+  end
+
+  def package do
+    [
+      name: "sfdc_query",
+      files: ~w(lib .credo.exs .formatter.exs mix.exs README*),
+      licenses: ["Apache-2.0"],
+      links: %{"GitHub" => "https://github.com/linqueta/sfdc_query"}
     ]
   end
 
