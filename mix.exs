@@ -1,7 +1,7 @@
 defmodule SFDCQuery.MixProject do
   use Mix.Project
 
-  @version "0.1.1"
+  @version "0.1.2"
 
   def project do
     [
@@ -28,7 +28,7 @@ defmodule SFDCQuery.MixProject do
       name: "sfdc_query",
       files: ~w(lib .credo.exs .formatter.exs mix.exs README*),
       licenses: ["Apache-2.0"],
-      links: %{"GitHub" => "https://github.com/linqueta/sfdc_query"}
+      links: %{"GitHub" => "https://github.com/linqueta/sfdc-query"}
     ]
   end
 
