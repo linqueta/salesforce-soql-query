@@ -1,5 +1,8 @@
 # SFDCQuery
 
+[![Version](https://img.shields.io/hexpm/v/sfdc_query.svg)](https://hex.pm/packages/sfdc_query)
+[![Docs](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/sfdc_query/)
+
 Query Salesforce data easily formatting and viewing the data as you want!
 
 ## Installation
