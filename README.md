@@ -5,6 +5,20 @@
 
 Query Salesforce data easily formatting and viewing the data as you want!
 
+```elixir
+SFDCQuery.Client.Default.create(args)
+|> SFDCQuery.query("SELECT Id, Name, Website From Account LIMIT 3")
+|> SFDCQuery.View.Table.show()
+
+SELECT Id, Name, Website From Account LIMIT 3
+-------------------------------------------------------
+| Id                 | Name   | Website               |
+-------------------------------------------------------
+| 001U8000005CeutIAC | Page   |                       |
+| 001U8000005cJN0IAM | Nike   | https://www.nike.com/ |
+| 001U8000005cRAnIAM | Google | google.com            |
+```
+
 ## Installation
 
 ```elixir
