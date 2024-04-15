@@ -10,7 +10,7 @@ Query Salesforce data easily formatting and viewing the data as you want!
 ```elixir
 def deps do
   [
-    {:sdfc_query, "~> 0.1.0"}
+    {:sdfc_query, "~> 0.1.2"}
   ]
 end
 ```
